@@ -1,11 +1,6 @@
 .App {
   text-align: center;
 }
-.trigger-btn {
-  padding: 12px;
-  margin: 12px;
-}
-.trigger-btn:hover {
-  scale: 1.1;
-  cursor: pointer;
+.App-todo li {
+  text-align: left;
 }
