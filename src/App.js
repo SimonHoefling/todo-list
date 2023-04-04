@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import TodoList from './TodoList';
 
 class App extends Component {
 
@@ -8,24 +9,35 @@ class App extends Component {
 
     this.state = {
       todos: [
-        "Einkaufen",
-        "Wäsche waschen",
-        "Sport machen"
+        {id: 1, title: "Shopping"},
+        {id: 2, title: "Doing Laundry"},
+        {id: 3, title: "Watching TV"}
       ]
     }
+    this.addTodo = this.addTodo.bind(this);
+  }
+
+  addTodo() {
+    let todos = this.state.todos;
+    let maxId = 0;
+    for (let todo of todos) {
+      if (todo.id > maxId) {
+        maxId = todo.id;
+      }
+    }
+
+    todos.unshift({id: (maxId + 1), title: "Next Todo"});
+    this.setState({
+      todos: todos
+    })
   }
 
   render() {
     return (
       <div className="App">
-        <h1>Todo-Liste</h1>
-        <ul className='App-todo'>
-          {this.state.todos.map((todo) => {
-            return (
-              <li>{todo}</li>
-            )
-          })}
-        </ul>
+        <h1>Todo-List</h1>
+        <button onClick={this.addTodo}>Add List Item</button>
+        <TodoList todos={this.state.todos} />
       </div>
     );
   }
