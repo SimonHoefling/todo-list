@@ -3,7 +3,7 @@ import "./panel.css"
 
 class Panel extends Component {
   render() {
-    console.log("Hello from the panel.js")
+    console.log("Hello from the Panel.js");
     return (
       <div className='panel-container'>
         <div className='panel-top-container'>

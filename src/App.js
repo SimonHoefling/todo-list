@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import TodoList from './TodoList';
+import TodoAdd from './TodoAdd';
 
 class App extends Component {
 
@@ -17,7 +18,7 @@ class App extends Component {
     this.addTodo = this.addTodo.bind(this);
   }
 
-  addTodo() {
+  addTodo(title) {
     let todos = this.state.todos;
     let maxId = 0;
     for (let todo of todos) {
@@ -26,17 +27,18 @@ class App extends Component {
       }
     }
 
-    todos.unshift({id: (maxId + 1), title: "Next Todo"});
+    todos.unshift({id: (maxId + 1), title: title});
     this.setState({
       todos: todos
     })
   }
 
   render() {
+    console.log("Hello from App.js");
     return (
       <div className="App">
         <h1>Todo-List</h1>
-        <button onClick={this.addTodo}>Add List Item</button>
+        <TodoAdd onAdd={this.addTodo} />
         <TodoList todos={this.state.todos} />
       </div>
     );
