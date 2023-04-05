@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import PropTypes from 'prop-types';
 import Panel from './panel';
 
 class TodoAdd extends Component {
@@ -37,6 +38,10 @@ class TodoAdd extends Component {
       </Panel>
     )
   }
+}
+
+TodoAdd.propTypes = {
+  onAdd: PropTypes.func.isRequired
 }
 
 export default TodoAdd;
