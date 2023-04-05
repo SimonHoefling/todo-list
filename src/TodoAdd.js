@@ -27,7 +27,6 @@ class TodoAdd extends Component {
   }
 
   render() {
-    console.log("Hellor from TodoAdd.js");
 
     return (
       <Panel title="Add Todo-Item">

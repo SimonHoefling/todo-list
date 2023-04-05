@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 class TodoList extends Component {
   render () {
-    console.log("Hello from TodoList.js");
     return (
     <Panel title="Todos">
       <ul className='App-todo'>

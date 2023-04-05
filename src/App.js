@@ -27,14 +27,13 @@ class App extends Component {
       }
     }
 
-    todos.unshift({id: (maxId + 1), title: title});
+    todos.push({id: (maxId + 1), title: title});
     this.setState({
       todos: todos
     })
   }
 
   render() {
-    console.log("Hello from App.js");
     return (
       <div className="App">
         <h1>Todo-List</h1>
