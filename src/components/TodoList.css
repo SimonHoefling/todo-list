@@ -1,0 +1,12 @@
+.list-item {
+  list-style: none;
+  padding: 5px;
+  margin: 5px;
+  border-bottom: 1px solid black;
+}
+.list-item:hover {
+  cursor: pointer;
+  box-shadow: 0 1px 1px rgba(100, 98, 98, 0.5);
+  transform: translateY(-3px);
+  transition: box-shadow 0.4s ease-in-out;
+}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import PropTypes from 'prop-types';
 import Panel from './panel';
+import './TodoAdd.css';
 
 class TodoAdd extends Component {
 
@@ -30,9 +31,14 @@ class TodoAdd extends Component {
 
     return (
       <Panel title="Add Todo-Item">
-        <input type='text' onChange={this.onTodoInputChange} value={this.state.newTodo} />
+        <input className='input-field'
+                type='text'
+                onChange={this.onTodoInputChange}
+                value={this.state.newTodo}
+                placeholder='Enter Todo-Task'
+        />
         {(this.state.newTodo != "" ?(
-          <button onClick={this.onTodoAdd}>Add Todo ({this.state.newTodo.length})</button>
+          <button className='add-btn' onClick={this.onTodoAdd}>+</button>
         ) : null)}
       </Panel>
     )

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Panel from './panel';
 import PropTypes from 'prop-types';
+import './TodoList.css';
 
 class TodoList extends Component {
   render () {
@@ -9,7 +10,7 @@ class TodoList extends Component {
       <ul className='App-todo'>
         {this.props.todos.map((todo) => {
           return (
-            <li key={todo.id}>{todo.id}: {todo.title}</li>
+            <li className='list-item' key={todo.id}>{todo.id}: {todo.title}</li>
           )
         })}
       </ul>
